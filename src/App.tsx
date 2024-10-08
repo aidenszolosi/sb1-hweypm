@@ -8,9 +8,14 @@ import { User, Drink } from './types';
 
 const App: React.FC = () => {
   const [users, setUsers] = useState<User[]>([
-    { id: 1, name: 'Alice', drinks: [] },
-    { id: 2, name: 'Bob', drinks: [] },
-    { id: 3, name: 'Charlie', drinks: [] },
+    { id: 1, name: 'Soz', drinks: [] },
+    { id: 2, name: 'Bobo', drinks: [] },
+    { id: 3, name: 'Antes', drinks: [] },
+    { id: 4, name: 'Paul', drinks: [] },
+    { id: 5, name: 'Olimans', drinks: [] },
+    { id: 6, name: 'Livis', drinks: [] },
+    { id: 7, name: 'Loryn', drinks: [] },
+    { id: 8, name: 'Xander', drinks: [] },
   ]);
   const [drinks, setDrinks] = useState<Drink[]>([
     { id: 1, name: 'Beer', price: 5, calories: 150, abv: 5, packSize: 6, packPrice: 30 },

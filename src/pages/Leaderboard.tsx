@@ -1,6 +1,8 @@
-import React from 'react';
 import { Trophy, Beer } from 'lucide-react';
 import { User } from '../types';
+import React, { useState } from 'react';
+import PayoutCalculator from '../components/PayoutCalculator';
+
 
 interface LeaderboardProps {
   users: User[];
@@ -27,7 +29,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ users }) => {
       <h2 className="text-3xl font-bold mb-6 text-center gradient-text">
         Leaderboard
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-8 py-4">
         <div className="card glass-effect">
           <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
             <Trophy size={24} className="text-yellow-400 mr-2" />
@@ -49,15 +51,20 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ users }) => {
           </ul>
         </div>
         <div className="card glass-effect">
+          <h2 className="text-2xl font-bold mb-6 text-center gradient-text">Payout Summary</h2>
+          <PayoutCalculator users={users} />
+        </div>
+      </div>
+        <div className="card glass-effect">
           <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
             <Trophy size={24} className="text-purple-400 mr-2" />
             Highest Alcohol Consumption
           </h3>
-          <ul className="space-y-2">
+          <ul className="space-y-6">
             {sortedByAlcohol.map((user, index) => (
               <li
                 key={user.id}
-                className="flex items-center justify-between bg-gray-700 bg-opacity-50 rounded-md px-3 py-2"
+                className="flex items-center justify-between bg-gray-700 bg-opacity-50 rounded-md px-3 py-3"
               >
                 <span className="font-medium text-blue-300">{user.name}</span>
                 <span className="flex items-center text-purple-400">
@@ -71,7 +78,6 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ users }) => {
           </ul>
         </div>
       </div>
-    </div>
   );
 };
 
