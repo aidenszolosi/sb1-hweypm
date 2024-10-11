@@ -16,6 +16,7 @@ const App: React.FC = () => {
     { id: 6, name: 'Livis', drinks: [] },
     { id: 7, name: 'Loryn', drinks: [] },
     { id: 8, name: 'Mason', drinks: [] },
+    { id: 9, name: 'Xander', drinks: [] },
   ]);
   const [drinks, setDrinks] = useState<Drink[]>([
     { id: 1, name: 'Beer', price: 5, calories: 150, abv: 5, packSize: 6, packPrice: 30 },
